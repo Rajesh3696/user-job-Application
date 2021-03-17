@@ -1,0 +1,50 @@
+.Button {
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    border: 2px solid #4caf50;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    margin-left: 100px;
+    width: 200px;
+  }
+  
+  .font {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+  }
+  
+  .carousel {
+    width: 900px;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .card {
+    margin:auto; /* Added */
+    float: none; /* Added */
+    margin-top: 10px; /* Added */
+    padding: 20px 10px ;
+
+  }
+  label {
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+  }
+  input,
+textarea,
+select {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+}
