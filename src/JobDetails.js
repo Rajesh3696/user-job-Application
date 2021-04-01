@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Modal from 'react-modal'
+import {Modal} from 'react-bootstrap'
+import Userdetails from './Userdetails'
 //  import {Button} from 'react-bootstrap'
 
 
@@ -19,6 +20,7 @@ function JobDetails(props) {
             .then((response) => {
                 const result = response.data
                 setCandidate(result);
+                console.log(result)
                 setShow(true)
 
             })//success
@@ -83,6 +85,7 @@ function JobDetails(props) {
                                     <td>{ele.createdAt.slice(0, 10)}</td>
                                     <td><button type="button" class="btn btn-primary" key={ele._id} onClick={() => {
                                         handleDetails(ele._id)
+                                        setShow(true)
                                     }}>View Details</button></td>
                                     {
                                         ele.status === "applied" && (<td><button type="button" class="btn btn-success" onClick={() => {
@@ -105,28 +108,7 @@ function JobDetails(props) {
                     }
                 </tbody>
             </table>
-
-            {
-                show && (
-                  
-                         <div>
-                                   <h2>{candidate.name} Profile</h2>
-                                   <hr />
-                                   <div>
-                                       <h5>Contact number - {candidate.phone}</h5>
-                                       <h5>Email - {candidate.email}</h5>
-                                       <h5>Skills - {candidate.skills}</h5>
-                                       <h5>Experience - {candidate.experience}</h5>
-                                       <hr />
-                                   </div>
-                                   <button onClick={handleClose}> Close</button>
-                               </div> 
-                )
-            }
-
-
-
-
+                  { show&& ( <Userdetails candidate={candidate} show={show} handleClose={handleClose}/>)} }
 
         </div>
     )
